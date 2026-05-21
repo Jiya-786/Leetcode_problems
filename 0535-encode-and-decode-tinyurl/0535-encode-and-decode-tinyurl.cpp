@@ -3,6 +3,11 @@
 // and also maintain a hash to avoid duplicate short urls for same long url
 // ie we want a bijection
 // and for a bijection, like in isomorphic string, we need 2 hash-maps
+
+// The random approach is excellent for most purposes, but it's non-deterministic. Two different 
+// instances of the class will produce different short URLs for the same input. What if we want a 
+// deterministic approach where the same URL always maps to the same short URL, without needing 
+// the url2code dedup map?
 class Solution {
     unordered_map<string,string> code2url;
     unordered_map<string,string> url2code;
