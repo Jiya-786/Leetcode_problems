@@ -1,25 +1,42 @@
-// time o(1)
-// space o(n)
-// this is the most basic version
-// it gives duplicate short url for same long url
-// since we are not checking if we have shortened the url already
-// this can be improved using randomizing the counter aka key and maintaing a hash to chek if we 
-// have already shortened the url
+// random key generation
+// instead of predictable sequential IDs, generate a random alphanumeric string for each URL
+// and also maintain a hash to avoid duplicate short urls for same long url
+// ie we want a bijection
+// and for a bijection, like in isomorphic string, we need 2 hash-maps
 class Solution {
-    unordered_map<int,string> map;
-    int counter=0;
+    unordered_map<string,string> code2url;
+    unordered_map<string,string> url2code;
+    string chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    string prefix="http://tinyurl.com/";
+
+    string generateKey(){
+        string key;
+        for(int i=0;i<6;i++){
+            key+=chars[rand()%chars.size()];
+        }
+        return key;
+    }
 public:
 
     // Encodes a URL to a shortened URL.
     string encode(string longUrl) {
-        map[counter]=longUrl;
-        return "http://tinyurl.com/"+ to_string(counter++);
+        // if(url2code.count[longUrl]){
+        if(url2code.count(longUrl)){
+            return prefix+url2code[longUrl];
+        }
+        string key=generateKey();
+        while(code2url.count(key)){
+            key=generateKey();
+        }
+        code2url[key]=longUrl;
+        url2code[longUrl]=key;
+        return prefix+key;
     }
 
     // Decodes a shortened URL to its original URL.
     string decode(string shortUrl) {
-        int id=stoi(shortUrl.substr(shortUrl.rfind('/')+1));
-        return map[id];
+        string key=shortUrl.substr(prefix.size());
+        return code2url[key];
     }
 };
 // Your Solution object will be instantiated and called as such:
