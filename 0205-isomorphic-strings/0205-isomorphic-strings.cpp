@@ -1,26 +1,19 @@
 class Solution {
 public:
     bool isIsomorphic(string s, string t) {
-        unordered_map<char,char> mapS;
-        unordered_map<char,char> mapT;
+        int lastSeenS[256],lastSeenT[256];
+        fill(lastSeenS,lastSeenS+256,-1);
+        fill(lastSeenT,lastSeenT+256,-1);
 
-        if(s.size()!=t.size()) return false;
-        
         for(int i=0;i<s.size();i++){
-            char charS=s[i];
-            char charT=t[i];
-
-            if(mapS.count(charS) && mapS[charS]!=charT){
-                return false;
-            }
-            if(mapT.count(charT) && mapT[charT]!=charS){
+            if(lastSeenS[s[i]]!=lastSeenT[t[i]]){
                 return false;
             }
 
-            mapS[charS]=charT;
-            mapT[charT]=charS;
+            lastSeenS[s[i]]=i;
+            lastSeenT[t[i]]=i;
         }
         return true;
-    
+
     }
 };
