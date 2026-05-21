@@ -1,49 +1,30 @@
-// random key generation
-// instead of predictable sequential IDs, generate a random alphanumeric string for each URL
-// and also maintain a hash to avoid duplicate short urls for same long url
-// ie we want a bijection
-// and for a bijection, like in isomorphic string, we need 2 hash-maps
+// Instead of random keys, use a hash function on the long URL to produce a fixed-length key. Java's 
+// built-in hashCode() or any hash function maps the URL to an integer, which we then convert to a comp-
+// act string.
 
-// The random approach is excellent for most purposes, but it's non-deterministic. Two different 
-// instances of the class will produce different short URLs for the same input. What if we want a 
-// deterministic approach where the same URL always maps to the same short URL, without needing 
-// the url2code dedup map?
+// This approach is deterministic: the same URL always produces the same short URL, eliminating the need 
+// for a reverse map.
+
+// The trade-off is that hash collisions are possible (different URLs could produce the same hash). We 
+// handle this by checking for collisions and incrementing the key when they occur. But for the scale of 
+// this problem, collisions are extremely rare.
 class Solution {
-    unordered_map<string,string> code2url;
-    unordered_map<string,string> url2code;
-    string chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    string prefix="http://tinyurl.com/";
+    unordered_map<size_t, string> map;
 
-    string generateKey(){
-        string key;
-        for(int i=0;i<6;i++){
-            key+=chars[rand()%chars.size()];
-        }
-        return key;
-    }
 public:
-
-    // Encodes a URL to a shortened URL.
     string encode(string longUrl) {
-        // if(url2code.count[longUrl]){
-        if(url2code.count(longUrl)){
-            return prefix+url2code[longUrl];
+        // Use std::hash for deterministic mapping
+        size_t key = hash<string>{}(longUrl);
+        // Handle collision: if the key exists but maps to a different URL
+        while (map.count(key) && map[key] != longUrl) {
+            key++;
         }
-        string key=generateKey();
-        while(code2url.count(key)){
-            key=generateKey();
-        }
-        code2url[key]=longUrl;
-        url2code[longUrl]=key;
-        return prefix+key;
+        map[key] = longUrl;
+        return "http://tinyurl.com/" + to_string(key);
     }
 
-    // Decodes a shortened URL to its original URL.
     string decode(string shortUrl) {
-        string key=shortUrl.substr(prefix.size());
-        return code2url[key];
+        size_t key = stoull(shortUrl.substr(shortUrl.rfind('/') + 1));
+        return map[key];
     }
 };
-// Your Solution object will be instantiated and called as such:
-// Solution solution;
-// solution.decode(solution.encode(url));
