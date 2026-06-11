@@ -22,6 +22,12 @@
 //     }
 // };
 
+// maintain a prefix and suffix array
+// prefix array contains product of all elts before the ith elt
+// suffix array contains product of all elts after the ith elt
+// final result will be prefix*suffix 
+// time o(n)
+// space o(n)
 class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
