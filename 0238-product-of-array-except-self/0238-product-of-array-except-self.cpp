@@ -20,7 +20,7 @@ public:
         }
         int suffixProd=1;
         for(int i=n-1;i>=0;i--){
-            result[i]=result[i]*suffixProd;
+            result[i]*=suffixProd;
             suffixProd*=nums[i];
         }
         return result;
