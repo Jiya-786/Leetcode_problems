@@ -16,7 +16,6 @@ public:
             else{
                 if(nums[i]==expected){
                     expected++;
-                    continue;
                 }
                 else{
                     break;
