@@ -1,10 +1,23 @@
-// just sort and take the elt at n/2 position 
+// using moores voting algo
+// time o(n)
+// space o(1)
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        int n=(nums.size())/2;
-        return nums[n];
-
+        int ans=nums[0];
+        int count=1;
+        for(int i=1;i<nums.size();i++){
+            if(nums[i]==ans){
+                count++;
+            }
+            else{
+                count--;
+            }
+            if(count==0){
+                ans=nums[i];
+                count=1;
+            }
+        }
+        return ans;
     }
 };
