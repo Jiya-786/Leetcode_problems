@@ -7,12 +7,12 @@ public:
         for(int a:nums){
             mp[a]++;
         }
-        int ans;
+        // int ans;
         for(int b:nums){
             if(mp[b]>n){
-                ans=b;
+                return b;
             }
         }
-        return ans;
+        return -1;
     }
 };
