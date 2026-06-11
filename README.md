@@ -12,6 +12,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0169-majority-element](https://github.com/Jiya-786/Leetcode_problems/tree/master/0169-majority-element) |
 | [0219-contains-duplicate-ii](https://github.com/Jiya-786/Leetcode_problems/tree/master/0219-contains-duplicate-ii) |
 | [0238-product-of-array-except-self](https://github.com/Jiya-786/Leetcode_problems/tree/master/0238-product-of-array-except-self) |
+| [0268-missing-number](https://github.com/Jiya-786/Leetcode_problems/tree/master/0268-missing-number) |
 | [0283-move-zeroes](https://github.com/Jiya-786/Leetcode_problems/tree/master/0283-move-zeroes) |
 ## Two Pointers
 |  |
@@ -26,6 +27,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0169-majority-element](https://github.com/Jiya-786/Leetcode_problems/tree/master/0169-majority-element) |
 | [0205-isomorphic-strings](https://github.com/Jiya-786/Leetcode_problems/tree/master/0205-isomorphic-strings) |
 | [0219-contains-duplicate-ii](https://github.com/Jiya-786/Leetcode_problems/tree/master/0219-contains-duplicate-ii) |
+| [0268-missing-number](https://github.com/Jiya-786/Leetcode_problems/tree/master/0268-missing-number) |
 | [0535-encode-and-decode-tinyurl](https://github.com/Jiya-786/Leetcode_problems/tree/master/0535-encode-and-decode-tinyurl) |
 ## String
 |  |
@@ -42,6 +44,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0049-group-anagrams](https://github.com/Jiya-786/Leetcode_problems/tree/master/0049-group-anagrams) |
 | [0169-majority-element](https://github.com/Jiya-786/Leetcode_problems/tree/master/0169-majority-element) |
+| [0268-missing-number](https://github.com/Jiya-786/Leetcode_problems/tree/master/0268-missing-number) |
 ## Design
 |  |
 | ------- |
@@ -66,4 +69,16 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0238-product-of-array-except-self](https://github.com/Jiya-786/Leetcode_problems/tree/master/0238-product-of-array-except-self) |
+## Math
+|  |
+| ------- |
+| [0268-missing-number](https://github.com/Jiya-786/Leetcode_problems/tree/master/0268-missing-number) |
+## Binary Search
+|  |
+| ------- |
+| [0268-missing-number](https://github.com/Jiya-786/Leetcode_problems/tree/master/0268-missing-number) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0268-missing-number](https://github.com/Jiya-786/Leetcode_problems/tree/master/0268-missing-number) |
 <!---LeetCode Topics End-->
