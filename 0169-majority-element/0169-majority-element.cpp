@@ -1,18 +1,10 @@
-// making an unordered map
+// just sort and take the elt at n/2 position 
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
-        unordered_map<int,int> mp;
+        sort(nums.begin(),nums.end());
         int n=(nums.size())/2;
-        for(int a:nums){
-            mp[a]++;
-        }
-        // int ans;
-        for(int b:nums){
-            if(mp[b]>n){
-                return b;
-            }
-        }
-        return -1;
+        return nums[n];
+
     }
 };
