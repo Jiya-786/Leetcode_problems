@@ -1,14 +1,13 @@
-// hash-set will give a better solution than hash-map beciase we only need to know whether or not the number exists, not how many times it exists
-// time o(n)
-// space o(n)
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
-        unordered_set<int> st(nums.begin(),nums.end());
-
+        unordered_map<int,int> mp;
+        for(int num:nums){
+            mp[num]++;
+        }
         int counter=1;
         while(true){
-            if(st.find(counter)==st.end()){
+            if(mp[counter]==0){
                 return counter;
             }
             else counter++;
