@@ -23,6 +23,10 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | (https://leetcode.com/problems/missing-number/) |
+|https://leetcode.com/problems/first-missing-positive/description/|
+|https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/|
+|https://leetcode.com/problems/set-mismatch/|
+|https://leetcode.com/problems/find-the-duplicate-number/description/|
 
 ## Hash Table
 |  |
