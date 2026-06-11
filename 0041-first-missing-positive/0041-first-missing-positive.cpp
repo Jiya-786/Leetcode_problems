@@ -10,6 +10,8 @@
             //   current elt is already in correct position
             //   target position already has correct value(duplicate)
 // after this arrangement, one pass through the array gives us the ans
+// time o(n)
+// space o(1)
 
 class Solution {
 public:
