@@ -15,7 +15,7 @@ public:
             }
             if(count==0){
                 ans=nums[i];
-                count=1;                    // after counter reaches 0, it is imp to update it to 1
+                count=1;                    // after counter reaches 0, it is imp to reset it to 1
             }
         }
         return ans;
