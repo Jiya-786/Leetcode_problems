@@ -20,7 +20,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0283-move-zeroes](https://github.com/Jiya-786/Leetcode_problems/tree/master/0283-move-zeroes) |
 
 ## CYCLE SORT
-# always used when mentioned numbers are in range [0,n] or [1,n]
+### always used when mentioned numbers are in range [0,n] or [1,n]
 |  |
 | ------- |
 | (https://leetcode.com/problems/missing-number/) |
