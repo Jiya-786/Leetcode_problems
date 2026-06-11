@@ -1,18 +1,27 @@
-// hash-set will give a better solution than hash-map beciase we only need to know whether or not the number exists, not how many times it exists
-// time o(n)
-// space o(n)
+// using sorting
+// time o(nlogn)
+// space o(1)
+// this time-space tradeoff is ipp to the one in hashset, none are optimal but it reveals the problem beautifully
+
 class Solution {
 public:
     int firstMissingPositive(vector<int>& nums) {
-        unordered_set<int> st(nums.begin(),nums.end());
-
-        int counter=1;
-        while(true){
-            if(st.find(counter)==st.end()){
-                return counter;
+        sort(nums.begin(),nums.end());
+        
+        int expected=1;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]<=0 || i>0 && nums[i]==nums[i-1]){
+                continue;
             }
-            else counter++;
+            else{
+                if(nums[i]==expected){
+                    expected++;
+                }
+                else{
+                    break;
+                }
+            }
         }
-        return -1;
+        return expected;
     }
 };
