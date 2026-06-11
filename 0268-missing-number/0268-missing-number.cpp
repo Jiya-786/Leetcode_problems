@@ -1,3 +1,4 @@
+// USING CYCLE SORT
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
@@ -6,7 +7,8 @@ public:
         int i=0;
 
         while(i<n){
-            if(nums[i]<n && nums[i]!=nums[nums[i]]){   // if no is in range and still not in
+            if(nums[i]<n && nums[i]!=nums[nums[i]]){   // if no is in range ie <n and does not
+                                                       // have a duplicate, and still not in
                                                        // correct position, bring it into
                                                        // correct position
                 swap(nums[i],nums[nums[i]]);
