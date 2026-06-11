@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Array
 |  |
 | ------- |
+| [0041-first-missing-positive](https://github.com/Jiya-786/Leetcode_problems/tree/master/0041-first-missing-positive) |
 | [0049-group-anagrams](https://github.com/Jiya-786/Leetcode_problems/tree/master/0049-group-anagrams) |
 | [0128-longest-consecutive-sequence](https://github.com/Jiya-786/Leetcode_problems/tree/master/0128-longest-consecutive-sequence) |
 | [0169-majority-element](https://github.com/Jiya-786/Leetcode_problems/tree/master/0169-majority-element) |
@@ -19,6 +20,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Hash Table
 |  |
 | ------- |
+| [0041-first-missing-positive](https://github.com/Jiya-786/Leetcode_problems/tree/master/0041-first-missing-positive) |
 | [0049-group-anagrams](https://github.com/Jiya-786/Leetcode_problems/tree/master/0049-group-anagrams) |
 | [0128-longest-consecutive-sequence](https://github.com/Jiya-786/Leetcode_problems/tree/master/0128-longest-consecutive-sequence) |
 | [0169-majority-element](https://github.com/Jiya-786/Leetcode_problems/tree/master/0169-majority-element) |
