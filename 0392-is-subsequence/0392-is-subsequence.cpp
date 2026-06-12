@@ -1,20 +1,26 @@
-// Approach 1: Two Pointers
-
-// For a single query, this is already optimal. But the follow-up asks what happens when we have billions of queries against the same t. Every query re-scans t from scratch. Can we preprocess t once so each query skips the linear scan?
+// Approach 2: Binary Search with Preprocessing
 
 class Solution {
 public:
     bool isSubsequence(string s, string t) {
-        int i=0,j=0;
-
-        while(i<s.size() && j<t.size()){
-            if(s[i]==t[j]){
-                i++;j++;
-            }
-            else{
-                j++;
-            }
+        unordered_map<char,vector<int>> mp;
+        for(int j=0;j<t.size();j++){
+            mp[t[j]].push_back(j);
         }
-        return i==s.size();
+        int prevIndex=-1;
+
+        for(char c:s){
+            if(mp.find(c)==mp.end()) return false;
+
+            vector<int>& indices=mp[c];
+            auto it=lower_bound(indices.begin(),indices.end(),prevIndex+1);    // The lower bound function finds the opposition of the element
+                                                                               // which is greater than or equal to the target value. Internally, the lower bound function uses binary search
+            if(it==indices.end()) return false;
+
+            prevIndex=*it;   // It is a pointer so we need to use the dereferencing operator to get the
+                             // previous index value
+
+        }
+        return true;
     }
 };
