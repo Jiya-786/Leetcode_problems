@@ -42,7 +42,10 @@
 //             //     totWater+=max(0,(min(left[i],right[i])-height[i]));
 //             // }
 //             // totWater+=(min(left[i],right[i])-height[i]);
-//             totWater+=max(0,(min(left[i],right[i])-height[i]));   
+//             totWater+=max(0,(min(left[i],right[i])-height[i]));     we need this max out of 0 cuz left[i] or
+//                                                                     right[i] only guarantees ht of bar that
+//                                                                     is greatest on the left or right does not
+//                                                                     guarantee it is greater than the ith bar or not
 //         }
 //         return totWater;
 //     }
