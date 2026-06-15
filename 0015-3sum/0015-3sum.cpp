@@ -1,3 +1,6 @@
+// BRUTE FORCE
+// time o(n3)
+// space o(1)
 // class Solution {
 // public:
 //     vector<vector<int>> threeSum(vector<int>& nums) {
@@ -19,6 +22,9 @@
 //     }
 // };
 
+// SORTING + TWO-POINTER
+// time o(n2)
+// space o(1)
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
