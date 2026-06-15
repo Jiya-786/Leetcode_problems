@@ -1,16 +1,21 @@
-// BRUTE FORCE
+// HASH-MAP + PREFIX-SUM
 class Solution {
 public:
     int subarraySum(vector<int>& nums, int k) {
-        int count = 0;
-        for (int i = 0; i < nums.size(); i++) {
-            int sum = 0;
-            for (int j = i; j < nums.size(); j++) {
-                sum += nums[j];
-                if (sum == k) {
-                    count++;
-                }
+        int count=0;
+        int prefixSum=0;
+
+        unordered_map<int,int> prefixCount;
+        prefixCount[0]=1;
+
+        for(int num:nums){
+            prefixSum+=num;
+            if(prefixCount.count(prefixSum-k)){
+                count+=prefixCount[prefixSum-k];
             }
+
+            prefixCount[prefixSum]++;
+            
         }
         return count;
     }
