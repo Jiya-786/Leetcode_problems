@@ -81,6 +81,7 @@ public:
     }
 };
 
+// most optimized- USING 2 POINTERS
 // class Solution {
 // public:
 //     int trap(vector<int>& height) {
