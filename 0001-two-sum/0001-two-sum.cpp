@@ -1,3 +1,6 @@
+// USING HASH-SET
+// time o(n)
+// space o(n)
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
