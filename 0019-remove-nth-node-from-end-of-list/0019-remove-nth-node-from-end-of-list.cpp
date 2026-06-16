@@ -34,7 +34,7 @@ public:
 //                                           ^
 //                                           head
 // this setup allows us to delete head ie 1 the same way we would delete other nodes
-        for(int i=0;i<length-n;i++){
+        for(int i=0;i<length-n;i++){    // becuase we want prev to stop before the node we want to delete
             prev=prev->next;
         }
         ListNode* toDelete=prev->next;
