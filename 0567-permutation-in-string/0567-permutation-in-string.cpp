@@ -1,20 +1,3 @@
-// class Solution {
-// public:
-//     bool checkInclusion(string s1, string s2) {
-//         // Sort to get the lexicographically smallest permutation
-//         sort(s1.begin(), s1.end());
-
-//         // Try every permutation of s1
-//         do {
-//             if (s2.find(s1) != string::npos) {
-//                 return true;
-//             }
-//         } while (next_permutation(s1.begin(), s1.end()));
-
-//         return false;
-//     }
-// };
-
 class Solution {
 public:
     bool checkInclusion(string s1, string s2) {
@@ -29,15 +12,28 @@ public:
             windowFreq[s2[i] - 'a']++;
         }
 
-        if (s1Freq == windowFreq) return true;
-
-        // Slide the window across s2
-        for (int i = n; i < m; i++) {
-            windowFreq[s2[i] - 'a']++;           // Add new char
-            windowFreq[s2[i - n] - 'a']--;       // Remove old char
-            if (s1Freq == windowFreq) return true;
+        // Count initial matches
+        int matches = 0;
+        for (int i = 0; i < 26; i++) {
+            if (s1Freq[i] == windowFreq[i]) matches++;
         }
 
-        return false;
+        for (int i = n; i < m; i++) {
+            if (matches == 26) return true;
+
+            // Add the character entering the window
+            int addIdx = s2[i] - 'a';
+            windowFreq[addIdx]++;
+            if (windowFreq[addIdx] == s1Freq[addIdx]) matches++;
+            else if (windowFreq[addIdx] == s1Freq[addIdx] + 1) matches--;
+
+            // Remove the character leaving the window
+            int remIdx = s2[i - n] - 'a';
+            windowFreq[remIdx]--;
+            if (windowFreq[remIdx] == s1Freq[remIdx]) matches++;
+            else if (windowFreq[remIdx] == s1Freq[remIdx] - 1) matches--;
+        }
+
+        return matches == 26;
     }
 };
