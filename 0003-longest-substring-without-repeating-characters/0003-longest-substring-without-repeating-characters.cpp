@@ -1,21 +1,3 @@
-// this code counts unique characters we need longest substring from the string
-// class Solution {
-// public:
-//     int lengthOfLongestSubstring(string s) {
-//         unordered_map<char,int> map;
-//         for(char c:s){
-//             map[c]++;
-//         }
-//         int count=0;
-//         for(auto& it:map){
-//             if(it.second()){
-//                 count++;
-//             }
-//         }
-//         return count;
-//     }
-// };
-
 // BRUTE FORCE
 // class Solution {
 // public:
