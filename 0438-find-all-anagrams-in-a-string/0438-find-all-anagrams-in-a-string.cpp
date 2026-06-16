@@ -1,52 +1,28 @@
-// // 0 1 2 3 4 5 6
-// // BRUTE FORCE
-// // extract each string, sort, compare
-// class Solution {
-// public:
-//     vector<int> findAnagrams(string s, string p) {
-//         int n=s.size();
-//         int m=p.size();
-
-//         // p=sort(p.begin(),p.end());
-//         sort(p.begin(),p.end());
-
-//         vector<int> ans;
-//         if(m>n) return {};
-//         for(int i=0;i<n-m+1;i++){
-//             string window=s.substr(i,m);
-//             // window=sort(window.begin(),window.end());
-//             sort(window.begin(),window.end());
-//             if(window==p) ans.push_back(i);
-//         }
-//         return ans;
-//     }
-// };
-
-// (M-2) freq map comparision method 
+// M-3 maintaining array instead of hash-map
+// faster run time
+// although theoretically both are o(n)
+// but hash-map has more over-head
 class Solution {
 public:
     vector<int> findAnagrams(string s, string p) {
         int n=s.size();
         int m=p.size();
-        unordered_map<char,int> pmap,smap;
-        for(char c:p){
-            pmap[c]++;
-        }
+        vector<int> phash(26,0),shash(26,0);
+
+        if(n<m) return {};
 
         vector<int> ans;
         for(int i=0;i<m;i++){
-            if(m>n) return {};
-            smap[s[i]]++;
-            if(smap==pmap) ans.push_back(0);
-                // ans.push_back(i-2);  this 2 is hardcoded, it depends on the window size m, need not be 2 always
+            phash[p[i]-'a']++;
+            shash[s[i]-'a']++;
         }
-        int left=0;
+        if(phash==shash) ans.push_back(0);
+
         for(int i=m;i<n;i++){
-            smap[s[left]]--;   // if it is like {e:0} and pmap in 'abc' case has no e, equality still won't hold, hence, we should erase characters with 0 freq.
-            if(smap[s[left]]==0) smap.erase(s[left]);
-            smap[s[i]]++;
-            left++;
-            if(smap==pmap) ans.push_back(left);  // or ans.push_back(i-m+1)
+            shash[s[i]-'a']++;
+            shash[s[i-m]-'a']--;
+
+            if(shash==phash) ans.push_back(i-m+1);
         }
         return ans;
     }
