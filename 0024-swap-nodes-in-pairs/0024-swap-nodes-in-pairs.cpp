@@ -8,17 +8,25 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+//  USING DUMMY VARIABLE SO THAT ALL NODES BECOME UNIFROM AND WE NEED THE SAME OPERATIONS FOR EVERY PAIR OF NODE
 class Solution {
 public:
     ListNode* swapPairs(ListNode* head) {
-        if(!head || !head->next) return head;
+        ListNode dummy(0,head);
+        ListNode* prev=&dummy;
 
-        ListNode* first=head;
-        ListNode* second=head->next;
+        while(prev->next && prev->next->next){   // becuase 2 nodes have to exist to swap them
+            ListNode* first=prev->next;
+            ListNode* second=prev->next->next;
 
-        first->next=swapPairs(second->next);
-        second->next=first;
+            prev->next=second;
+            first->next=second->next;
+            second->next=first;
 
-        return second;
+            prev=first;
+            
+        }
+        return dummy.next;
     }
 };
