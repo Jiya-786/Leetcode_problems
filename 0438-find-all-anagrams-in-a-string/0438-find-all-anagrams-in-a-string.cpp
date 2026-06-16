@@ -1,4 +1,27 @@
-// 0 1 2 3 4 5 6 
+// // 0 1 2 3 4 5 6
+// // BRUTE FORCE
+// // extract each string, sort, compare
+// class Solution {
+// public:
+//     vector<int> findAnagrams(string s, string p) {
+//         int n=s.size();
+//         int m=p.size();
+
+//         // p=sort(p.begin(),p.end());
+//         sort(p.begin(),p.end());
+
+//         vector<int> ans;
+//         if(m>n) return {};
+//         for(int i=0;i<n-m+1;i++){
+//             string window=s.substr(i,m);
+//             // window=sort(window.begin(),window.end());
+//             sort(window.begin(),window.end());
+//             if(window==p) ans.push_back(i);
+//         }
+//         return ans;
+//     }
+// };
+
 // (M-2) freq map comparision method 
 class Solution {
 public:
