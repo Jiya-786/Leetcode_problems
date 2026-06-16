@@ -8,28 +8,26 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
- 
-// ITERATIVE APPROACH
+
+// RECURSIVE APPROACH
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode dummy(0);
-        ListNode* current=&dummy;
-        int carry=0;
-
-        while(l1||l2||carry){
-            int val1= l1 ? l1->val : 0;
-            int val2= l2 ? l2->val : 0;
-            int sum= val1 + val2 + carry;
-
-            carry=sum/10;
-            current->next=new ListNode(sum%10);
-            current=current->next;
-
-            if (l1) l1=l1->next;
-            if (l2) l2=l2->next;
-
+        return addWithCarry(l1,l2,0);
+    }
+private:
+    ListNode* addWithCarry(ListNode* l1,ListNode* l2,int carry){
+        if(!l1 && !l2 && carry==0){
+            return nullptr;
         }
-        return dummy.next;
+
+        int sum=carry;
+        if(l1) sum+=l1->val;
+        if(l2) sum+=l2->val;
+
+        ListNode* node=new ListNode(sum%10);
+        node->next=addWithCarry(l1?l1->next:nullptr,l2?l2->next:nullptr,sum/10);
+        
+        return node;
     }
 };
