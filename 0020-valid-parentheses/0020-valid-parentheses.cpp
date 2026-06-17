@@ -1,18 +1,17 @@
+// BRUTE FORCE
+// time o(n2)
+// space o(n) since each replacement creates a new strong of size upto o(n)
 class Solution {
-    public:
+public:
     bool isValid(string s) {
-        stack<char> stk;
-        unordered_map<char,char> match={{')','('},{']','['},{'}','{'}};
-
-        for(char c:s){
-            if(match.count(c)){
-                if(stk.empty()||stk.top()!=match[c]){
-                    return false;
-                }
-                else stk.pop();
-            }
-            else stk.push(c);
+        string prev="";
+        while(s!=prev){
+            prev=s;
+            size_t pos;
+            while((pos=s.find("()"))!=string::npos) s.erase(pos,2);
+            while((pos=s.find("[]"))!=string::npos) s.erase(pos,2);
+            while((pos=s.find("{}"))!=string::npos) s.erase(pos,2);
         }
-        return stk.empty();
+        return s.empty();
     }
 };
