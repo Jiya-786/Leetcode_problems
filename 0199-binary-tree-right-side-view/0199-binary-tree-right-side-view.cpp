@@ -30,9 +30,11 @@ public:
                     result.push_back(node->val);
                 }
 
-                if(node->right) q.push(node->right);    // not result.push_back()
-                if(node->left) q.push(node->left);      // not q.push_back()
-                // if(node->right) q.push(node->right);    // not result.push_back()
+                // this is just a slight variation of the first submission, instead of processing left-to-right and pushing the rightmost ie last elt into result, we process right to left and push the first node into result
+                if(node->right) q.push(node->right);    // note: not result.push_back() or q.push_back()
+                if(node->left) q.push(node->left);      // 
+                
+                // if(node->right) q.push(node->right);  
             }        
         }
         return result;
