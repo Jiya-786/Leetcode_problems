@@ -26,12 +26,13 @@ public:
                 q.pop();
 
                 // the last node is the right side view
-                if(i==levelSize-1){
+                if(i==0){
                     result.push_back(node->val);
                 }
 
-                if(node->left) q.push(node->left);      // not q.push_back()
                 if(node->right) q.push(node->right);    // not result.push_back()
+                if(node->left) q.push(node->left);      // not q.push_back()
+                // if(node->right) q.push(node->right);    // not result.push_back()
             }        
         }
         return result;
