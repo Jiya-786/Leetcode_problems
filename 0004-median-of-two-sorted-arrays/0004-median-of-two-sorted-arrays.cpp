@@ -1,4 +1,4 @@
-// I didnt understand the binary search method 
+# // I didnt understand the binary search method 
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
