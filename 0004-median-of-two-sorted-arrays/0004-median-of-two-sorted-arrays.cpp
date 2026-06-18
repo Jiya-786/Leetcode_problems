@@ -1,3 +1,6 @@
+// USING MERGE TWO SORTED ARRAYS
+// time o(n+m)
+// space o(n+m)
 class Solution {
 public:
     double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
@@ -6,7 +9,7 @@ public:
         vector<int> merged(t);
         int k=0; int i=0; int j=0;
 
-        while(i<n && j<m){   // not for(int i=0;i<n && int j=0;j<m)
+        while(i<n && j<m){   // not: for(int i=0;i<n && int j=0;j<m)
             if(nums1[i]<=nums2[j]){
                 merged[k]=nums1[i];
                 i++;k++;
