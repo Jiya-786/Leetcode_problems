@@ -29,7 +29,10 @@ class Solution {
 public:
     int maxDepth(TreeNode* root) {
         queue<TreeNode*> q;
-        if(root==nullptr) return 0;
+        if(root==nullptr) return 0;  // we can push     
+        // nullptr into queue but problem will occur 
+        // when we dereference: like node->left or 
+        // node->right
         q.push(root);
         int depth=0;
 
