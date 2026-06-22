@@ -62,6 +62,10 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+// MORRIS TRAVERSAL
+// gives o(1) space optimization
+// recursive and itertive give o(n) 
 class Solution {
 public:
     vector<int> preorderTraversal(TreeNode* root) {
