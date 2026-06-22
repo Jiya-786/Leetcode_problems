@@ -5,10 +5,6 @@
 
 
 
-A collection of LeetCode questions i have solved so far
-
-
-
 
 <!---LeetCode Topics Start-->
 # LeetCode Topics
