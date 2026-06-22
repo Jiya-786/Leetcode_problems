@@ -1,5 +1,3 @@
-# Leetcode_problems
-
 
 <img width="224" height="224" alt="ClipWindowsGIF" src="https://github.com/user-attachments/assets/1c37118a-e73e-444c-8b41-85529aadaa08" />
 
@@ -7,7 +5,7 @@
 
 
 <!---LeetCode Topics Start-->
-# LeetCode Topics
+# LeetCode Topics Distribution
 ## Array
 |  |
 | ------- |
