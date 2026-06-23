@@ -9,27 +9,61 @@
  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
  * };
  */
+
+ // RECURSIVE DFS
+// class Solution {
+// public:
+//     vector<string> binaryTreePaths(TreeNode* root) {
+//         vector<string> result;
+//         dfsPath(root,"",result);
+//         return result;
+//     }
+// private:
+//     void dfsPath(TreeNode* root,string path,vector<string> result){
+//         if(!node) return;
+
+//         if(node->left==nullptr && node->right==nullptr){
+//             path+=node->val;
+//             result.push_back(path);
+//             return path;
+//         }
+
+//         else{
+//             path+=node->val;
+//             path+="->";
+//             dfs(node->left,path,result);
+//             dfs(node->right,path,result);
+//         }
+//     }
+// };
+
+// ITERATIVE DFS
 class Solution {
 public:
     vector<string> binaryTreePaths(TreeNode* root) {
         vector<string> result;
-        dfsPath(root,"",result);
+        stack<pair<TreeNode*,string>> st;
+        if(!root) return result;
+
+        st.push({root,to_string(root->val)});
+
+        while(!st.empty()){
+            auto [node,path]=st.top();
+            st.pop();
+
+            // if its a leaf, save its path
+            if(node->left==nullptr && node->right==nullptr){
+                result.push_back(path);
+                continue;
+            }
+
+            else{
+                if(node->left) st.push({node->left,path+"->"+to_string(node->left->val)});     // not path=path+"->"+to_string(node->left->val) because that will
+                                                                                                    // change the path for the right child node also, instead, just 
+                                                                                                    // add to path and push
+                if(node->right) st.push({node->right,path+"->"+to_string(node->right->val)});
+            }
+        }
         return result;
-    }
-private:
-    void dfsPath(TreeNode* node,string path,vector<string>& result){
-        if(!node) return;
-
-        if(node->left==nullptr && node->right==nullptr){
-            path+=to_string(node->val);                 // not just path+=node->val; it will push 1 as u001 etc
-            result.push_back(path);
-        }
-
-        else{
-            path+=to_string(node->val);
-            path+="->";
-            dfsPath(node->left,path,result);
-            dfsPath(node->right,path,result);
-        }
     }
 };
