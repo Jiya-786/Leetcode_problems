@@ -1,29 +1,43 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     TreeNode* sortedArrayToBST(vector<int>& nums) {
+//         if(nums.empty()) return root;
 
-// RECURSIVE DFS
-// time o(nlogn)
-// space o(n)
+//         int mid=nums.size()/2;
+//         TreeNode* root=new TreeNode(nums[mid]);      // the rhs returns a pointer to the new node
+//         root->left=sortedArrayToBST(nums.begin(),nums.begin()+mid);
+//         root->right=sortedArrayToBST(nums.begin()+mid+1,nums.end());
+//         return root;
+//     }
+// };
+
+// the previous method created many new arrays for each call
+// instead we can just pass indices to avoid space and time overhead
 class Solution {
 public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
         if(nums.empty()) return nullptr;
+        return build(nums,0,nums.size()-1);       
+    }
+private:
+    TreeNode* build(vector<int>&nums,int l,int r){
+        if(l>r) return nullptr;         // this is imp line
+        int mid=l+((r-l)/2);
+        TreeNode* node=new TreeNode(nums[mid]);
+        node->left=build(nums,l,mid-1);
+        node->right=build(nums,mid+1,r);
 
-        int mid=nums.size()/2;
-        TreeNode* root=new TreeNode(nums[mid]);      // the rhs returns a pointer to the new node
-        vector<int> left(nums.begin(),nums.begin()+mid);
-        vector<int> right(nums.begin()+mid+1,nums.end());       // this is an imp syntax
-        root->left=sortedArrayToBST(left);
-        root->right=sortedArrayToBST(right);
-        return root;
+        return node;
     }
 };
