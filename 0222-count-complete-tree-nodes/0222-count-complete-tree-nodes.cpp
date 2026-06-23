@@ -16,6 +16,8 @@
 // becuase a complete binary tree leats say has 1/2 leftmost childnode at the last level- then the right subtree is perfect
 // if it has 3 leftmost childnodes then left subtree will be prefect and for 4 child nodes in last level, entire tree will be prefect
 // we will make use of the fact thant in a perfect binary tree number of nodes are 2^h-1
+// o(log^2n) time
+// o(logn) space
 class Solution {
 public:
     int lh(TreeNode* root){
