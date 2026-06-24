@@ -42,24 +42,49 @@
 // };
 
 // RECURSIVE INORDER TRAVERSAL
+// class Solution {
+// public:
+//     int getMinimumDifference(TreeNode* root) {
+//         vector<int> result;
+//         inorder(root,result);
+
+//         int mini=INT_MAX;
+//         for(int i=1;i<result.size();i++){
+//             mini=min(mini,abs(result[i]-result[i-1]));
+//         }
+//         return mini;
+//     }
+// private: 
+//     void inorder(TreeNode* node,vector<int>& result){
+//         if(node==nullptr) return;
+
+//         inorder(node->left,result);
+//         result.push_back(node->val);
+//         inorder(node->right,result);
+//     }
+// };
+
+// SPACE OPTIMIZED RECURSIVE DFS
+// instead of sotring all elts in array, compare on the go while mainitaing a prev node pointer
 class Solution {
 public:
     int getMinimumDifference(TreeNode* root) {
-        vector<int> result;
-        inorder(root,result);
+        int res=INT_MAX;
+        TreeNode* prev=nullptr;
 
-        int mini=INT_MAX;
-        for(int i=1;i<result.size();i++){
-            mini=min(mini,abs(result[i]-result[i-1]));
-        }
-        return mini;
+        dfs(root,prev,res);
+
+        return res;
     }
-private: 
-    void inorder(TreeNode* node,vector<int>& result){
-        if(node==nullptr) return;
+private:
+    void dfs(TreeNode* node, TreeNode*& prev, int& res){
+        if(!node) return;
 
-        inorder(node->left,result);
-        result.push_back(node->val);
-        inorder(node->right,result);
+        dfs(node->left,prev,res);
+        if(prev) res=min(res,abs(node->val-prev->val));
+        prev=node;                                            // dry-run for better intuiton of how it 
+                                                              // works, seemed off at first
+        dfs(node->right,prev,res);
+
     }
 };
