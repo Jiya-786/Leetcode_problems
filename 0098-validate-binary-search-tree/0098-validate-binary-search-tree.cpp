@@ -33,18 +33,38 @@
 //     }
 // };
 
-// RECURSIVE RANGE VALIDATION
+// // RECURSIVE RANGE VALIDATION
+// class Solution {
+// public:
+//     bool isValidBST(TreeNode* root) {
+//         return validate(root,LONG_MIN,LONG_MAX);
+//     }
+// private:
+//     bool validate(TreeNode* node,long lower,long upper){
+//         if(!node) return true;
+
+//         if(node->val<=lower || node->val>=upper) return false;
+
+//         return validate(node->left,lower,node->val) && validate(node->right,node->val,upper);
+//     }
+// };
+
+// INORDER TRAVERSAL
 class Solution {
 public:
+    long prev=LONG_MIN;
     bool isValidBST(TreeNode* root) {
-        return validate(root,LONG_MIN,LONG_MAX);
+       return inorder(root);
     }
 private:
-    bool validate(TreeNode* node,long lower,long upper){
+    bool inorder(TreeNode* node){
         if(!node) return true;
 
-        if(node->val<=lower || node->val>=upper) return false;
+        if(!inorder(node->left)) return false;
+        if(node->val<=prev) return false;
+        prev=node->val;
+        if(!inorder(node->right)) return false;
 
-        return validate(node->left,lower,node->val) && validate(node->right,node->val,upper);
+        return true;
     }
 };
