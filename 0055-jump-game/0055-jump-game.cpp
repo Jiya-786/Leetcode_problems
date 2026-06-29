@@ -1,3 +1,6 @@
+// greedy
+// problem says max jump length ie we also need to chekc shorter jump
+// always keep track of the farthest we can reach, discard the rest- GREEDY
 class Solution {
 public:
     bool canJump(vector<int>& nums) {
