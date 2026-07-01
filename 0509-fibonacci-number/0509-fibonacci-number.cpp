@@ -1,16 +1,17 @@
 // DP bottom-up approach
+// constant space soln
+// space optimized becaise we will alwys need just the last 2 numbers
 class Solution {
 public:
     int fib(int n) {
         if(n<=1) return n;
-        vector<int> t(n+1,-1);
+        int a=0; int b=1;
+        int c=0;
 
-        t[0]=0; t[1]=1;
-        for(int i=2;i<=n;i++){
-            t[i]=t[i-1]+t[i-2];
+        for(int i=0;i<n-1;i++){
+            c=a+b;
+            a=b; b=c;
         }
-
-        return t[n];
-        
+        return c;
     }
 };
