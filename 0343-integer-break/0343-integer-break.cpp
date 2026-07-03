@@ -17,6 +17,7 @@
 // };
 
 // memoized soln
+// time complexity ~o(n^2)
 class Solution {
 public:
     vector<int> t=vector<int>(59,-1);    // or we can also resize inside the function on every call
