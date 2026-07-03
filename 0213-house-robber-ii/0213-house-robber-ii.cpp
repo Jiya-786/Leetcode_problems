@@ -1,63 +1,42 @@
-// // classic BRUTE FORCE
-// // check notes to udnerstand approach
-// // convert into house robber-1 by breaking into 2 separate cases and solve
-// but time o(2^n): exponential
-// gives TLE
-// hence memoize
+// bottom-up approach
+//we will divide this qs into 2 subproblems to convert it to 2 house robber 1 problems
+// checck notes for better understnading
 
-// class Solution {
-// public:
-//     int rob(vector<int>& nums) {
-//         int n=nums.size();
-
-//         if(n==1) return nums[0];
-
-//         int a=solve(nums,0,n-2);
-//         int b=solve(nums,1,n-1);
-
-//         return max(a,b);
-//     }
-// private:
-//     int solve(vector<int>& nums,int i,int n){
-
-//         if(i>n) return 0;
-
-//         int steal=nums[i]+solve(nums,i+2,n);
-//         int skip=solve(nums,i+1,n);
-
-//         return max(steal,skip);
-//     }
-// };
-
+// always define state in bottom up approach
+// t[i] represents max value until ith house
 class Solution {
 public:
     int rob(vector<int>& nums) {
         int n=nums.size();
-        vector<int> t1(n+1,-1);
-        vector<int> t2(n+1,-1);
-        // t[0]=0;
-        // t[1]=nums[0];
+        vector<int> t(n+1,0);
 
-        if(n==0) return 0;  // not rlly req
         if(n==1) return nums[0];
 
-        int a=solve(nums,0,n-2,t1);
-        int b=solve(nums,1,n-1,t2);
+        t[0]=0;
+        // case-1 taking house-1 implies we can not take last house, implies only houses until n-1 should be under consideration
+        // note index of t runs +1 than nums
+        for(int i=1;i<=n-1;i++){
+            int skip=t[i-1];
+            int steal=nums[i-1]+((i-2)<=0 ? 0 : t[i-2] );
 
-        return max(a,b);
-    }
-private:
-    int solve(vector<int>& nums,int i,int n,vector<int>& t){       // we will have to use 2 diff t vectors for both 
-                                                                   // a and b, ow will mix up repeating 
-                                                                   // sub-problems of both a and b.        
+            t[i]=max(skip,steal);
+        }
+        int res1=t[n-1];
 
-        if(i>n) return 0;
+        t.clear();
+        t[0]=0;
+        t[1]=0;
+        // case-2 not taking house1, implies we can take house2....last house(nth house)
+        // note index of t runs +1 than nums
+        for(int i=2;i<=n;i++){
+            int skip=t[i-1];
+            int steal=nums[i-1]+((i-2)<=0 ? 0 : t[i-2] );
 
-        if(t[i]!=-1) return t[i];
+            t[i]=max(skip,steal);
+        }
+        int res2=t[n];
 
-        int steal=nums[i]+solve(nums,i+2,n,t);
-        int skip=solve(nums,i+1,n,t);
+        return max(res1,res2);
 
-        return t[i]=max(steal,skip);
     }
 };
