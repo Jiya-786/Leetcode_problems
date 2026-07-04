@@ -69,3 +69,5 @@ public:
         return maxLen;
     }
 };
+
+// binary search+patience sorting method:
