@@ -34,3 +34,6 @@ public:
         return ans;
     }
 };
+
+// segment tree method:
+// time o(nlogn)
