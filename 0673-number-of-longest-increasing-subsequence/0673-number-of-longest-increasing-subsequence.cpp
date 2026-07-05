@@ -1,34 +1,36 @@
+// DP bottom-up approach
+// top-down recursive is a bit tricky for this variant of LIS
+// time o(n^2)
+// first understnad simple LIS bottom-up dry run then come to this for better idea of idea
 class Solution {
 public:
     int findNumberOfLIS(vector<int>& nums) {
-        int n = nums.size();
-        vector<int> length(n, 1); // LIS length ending at i
-        vector<int> cnt(n, 1);    // Number of LIS ending at i
-        int maxLen = 1;
+        int n=nums.size();
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < i; j++) {
-                if (nums[j] < nums[i]) {
-                    if (length[j] + 1 > length[i]) {
-                        // Found a longer subsequence ending at i
-                        length[i] = length[j] + 1;
-                        cnt[i] = cnt[j];
-                    } else if (length[j] + 1 == length[i]) {
-                        // Found another way to reach the same length
-                        cnt[i] += cnt[j];
+        if(n==1) return 1;
+
+        vector<int> t(n,1);
+        vector<int> count(n,1);                                                                          
+
+        for(int i=0;i<n;i++){
+            for(int j=0;j<i;j++){
+                if(nums[j]<nums[i]){
+                    if(t[j]+1==t[i]){
+                        count[i]+=count[j];
+                    }
+                    else if(t[j]+1>t[i]){
+                        count[i]=count[j];
+                        t[i]=t[j]+1;
                     }
                 }
             }
-            maxLen = max(maxLen, length[i]);
         }
+        int maxVal=*max_element(t.begin(),t.end());
 
-        // Sum counts for all positions achieving max length
-        int result = 0;
-        for (int i = 0; i < n; i++) {
-            if (length[i] == maxLen) {
-                result += cnt[i];
-            }
+        int ans=0;
+        for(int i=0;i<n;i++){
+            if(t[i]==maxVal) ans+=count[i];
         }
-        return result;
+        return ans;
     }
 };
