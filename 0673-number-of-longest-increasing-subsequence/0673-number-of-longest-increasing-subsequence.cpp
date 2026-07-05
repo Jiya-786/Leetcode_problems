@@ -20,7 +20,7 @@ public:
                     }
                     else if(t[j]+1>t[i]){
                         count[i]=count[j];
-                        t[i]=t[j]+1;
+                        t[i]=t[j]+1;        // note: dont forget this line
                     }
                 }
             }
