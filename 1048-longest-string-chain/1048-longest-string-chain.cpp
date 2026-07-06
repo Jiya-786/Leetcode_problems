@@ -89,7 +89,7 @@ public:
         if(M-N!=1) return false;
 
         int i=0;int j=0;
-        while(i<N && j<M){
+        while(i<N && j<M){          // rem its a while loop
             if(a[i]==b[j]) i++;
             j++;
         }
@@ -108,7 +108,7 @@ public:
                     dp[i]=max(dp[j]+1,dp[i]);
                 }
             }
-            maxLen=max(maxLen,dp[i]);
+            maxLen=max(maxLen,dp[i]);    // note its outside the i loop
         }
         return maxLen;
     }
