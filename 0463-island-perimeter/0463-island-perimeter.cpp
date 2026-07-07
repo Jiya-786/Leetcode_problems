@@ -30,9 +30,44 @@ public:
             for(int j=0;j<m;j++){
                 if(grid[i][j]==1){
                     dfs(grid,i,j);
+                    return perimeter;
                 }
             }
         }
-        return perimeter;
+        return -1;
     }
 };
+
+// bfs approach 
+// class Solution {
+// public:
+//     int islandPerimeter(vector<vector<int>>& grid) {
+//         int perimeter=0;
+//         int i=0; int j=0;
+//         int n=grid.size();
+//         int m=grid[0].size();
+//         queue<pair<int,int>> q;
+
+//         for(int i=0;i<n;i++){
+//             for(int j=0;j<m;j++){
+//                 if(grid[i][j]==1){
+//                     q.push({i,j});
+//                 }
+//             }
+//         }
+        
+
+//         while(!q.empty()){
+//             auto it=q.front();
+//             q.pop();
+
+
+//         }
+
+//         return perimeter;
+//     }
+
+//     void bfs(vector<vector<int>>& grid,int i,int j){
+
+//     }
+// };
