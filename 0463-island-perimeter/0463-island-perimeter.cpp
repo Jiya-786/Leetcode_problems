@@ -56,7 +56,7 @@ public:
             int i=it.first; int j=it.second; 
             q.pop();
             
-            // grid[i][j]=-1;
+            // grid[i][j]=-1;    // It is important to assign -1 while pushing into q so that we do not double count any islands. Go through the rule of thumb mentioned at the top before the DFS code 
             if(check(grid,i+1,j))   dir(grid,i+1,j,q);
             if(check(grid,i-1,j))   dir(grid,i-1,j,q);
             if(check(grid,i,j+1))   dir(grid,i,j+1,q);
