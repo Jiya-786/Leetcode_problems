@@ -19,6 +19,9 @@ public:
 };
 */
 
+// DFS approach + hash_map
+// can also use vector as hash_map by filling with all NULLs initially since given constraints have max nodes   
+// upto 100 only
 class Solution {
 public:
     void solve(Node*& old,Node*& clone,unordered_map<Node*,Node*>& mp){
@@ -37,9 +40,9 @@ public:
 
     Node* cloneGraph(Node* node) {
         // making clone of given node
-        if(!node) return nullptr;
+        if(!node) return nullptr;             // ncesssary cuz nxt line won't work for nullptr
         Node* clone=new Node(node->val);
-        unordered_map<Node*,Node*> mp;
+        unordered_map<Node*,Node*> mp;       
         mp[node]=clone;
 
         // make clone of its neighbours;
