@@ -1,3 +1,4 @@
+// We can also use just one array for pacific/atlantic and visited instead of using two different arrays but I didn't understand that idea
 class Solution {
 public:
     void dfs(vector<vector<int>>& heights,int i,int j,vector<vector<int>>& grid,int prev,vector<vector<int>>& visited){
@@ -9,7 +10,7 @@ public:
         if(prev<=heights[i][j]){
             grid[i][j]=1;
         }
-        if(i==0||i==n-1||j==0||j==m-1) grid[i][j]=1;
+        // if(i==0||i==n-1||j==0||j==m-1) grid[i][j]=1;    unnecessary
 
         prev=heights[i][j];
         visited[i][j]=1;
@@ -33,8 +34,12 @@ public:
             dfs(heights,0,j,pacific,prev,visited);
             // dfs(heights,0,j,atlantic,prev,visited);
         }
-        visited.clear();
-        visited.assign(n, vector<int>(m, -1));
+        // We don't need to reset between two pacific calls.
+        // Otherwise, it ends up doing extra DFS work over and again. 
+        // Because it will erase whatever we visited in the previous TFS call 
+        // But we need it.  
+        // visited.clear();
+        // visited.assign(n, vector<int>(m, -1));
         //first col
         for(int i=0;i<n;i++){
             dfs(heights,i,0,pacific,prev,visited);
@@ -47,8 +52,8 @@ public:
             // dfs(heights,n-1,j,pacific,prev,visited);
             dfs(heights,n-1,j,atlantic,prev,visited);
         }
-        visited.clear();
-        visited.assign(n, vector<int>(m, -1));
+        // visited.clear();
+        // visited.assign(n, vector<int>(m, -1));
         //last col
         for(int i=0;i<n;i++){
             // dfs(heights,i,m-1,pacific,prev,visited);
