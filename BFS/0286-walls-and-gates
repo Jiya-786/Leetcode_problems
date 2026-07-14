@@ -1,0 +1,8 @@
+Exactly same as 01-matrix leetcode 542
+Except in this question we also have walls that is cells we cannot traverse
+Initialize distance grid with value -Infinity
+Then fill all treasure cell distance grid elements as zero Because distance of treasure from treasure is of course zero
+then run multisource BFS from all treasure cells if and only if the coordinates are feasible and distance element of that cell equals minus Infinity
+then update the value of that distance cell
+and because we have initialized the entire distance grid with minus Infinity value hence any land cell that is unreachable will remain minus Infinity
+and we will get the correct answer as required
