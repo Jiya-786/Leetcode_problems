@@ -96,3 +96,9 @@
 | ------- |
 | [0268-missing-number](https://github.com/Jiya-786/Leetcode_problems/tree/master/0268-missing-number) |
 <!---LeetCode Topics End-->
+
+# 🗒️:
+- int gcd(int a, int b) {
+    if (b == 0) return a;
+    return gcd(b, a % b);
+}
