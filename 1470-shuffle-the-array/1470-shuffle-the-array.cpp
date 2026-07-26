@@ -51,3 +51,5 @@ public:
         return result;
     }
 };
+
+// didnt understand in-place encoding decoding method
