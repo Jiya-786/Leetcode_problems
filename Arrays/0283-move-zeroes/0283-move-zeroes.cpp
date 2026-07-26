@@ -1,31 +1,23 @@
+// 2-pointer swapping method
+// insertPos will keep track of next pos of non-zero elt, and we keep swapping into it everytime there is a non-zero elt.
+
+// more optimized
+// lesser tot operations
+// removes redundant operations by ignoring trivial case when nums[i]!=0 and  i==insertPos.  
 class Solution {
 public:
     void moveZeroes(vector<int>& nums) {
-        
-        // for(int i=0;i<nums.size();i++){
-        //     if(nums[i]==0){
-        //         for(int j=i;j<nums.size()-1;j++){
-        //                 nums[j]=nums[j+1];
-        //         }
-        //         nums[nums.size()-1]=0;
-        //     }
-        // }
+        int n=nums.size();
+        int insertPos=0;
 
-        vector<int> answer;
-        int count=0;
-        for(int i=0;i<nums.size();i++){
+        for(int i=0;i<n;i++){
             if(nums[i]!=0){
-                answer.push_back(nums[i]);
+                if(i!=insertPos){
+                    swap(nums[i],nums[insertPos]);
+                    // insertPos++;
+                }
+                insertPos++;
             }
-            else count++;
         }
-        for(int i=0;i<count;i++){
-            answer.push_back(0);
-        }
-
-        nums=answer;
-
-
-
     }
 };
