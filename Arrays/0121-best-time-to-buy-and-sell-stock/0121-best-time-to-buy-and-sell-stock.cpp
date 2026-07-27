@@ -17,3 +17,5 @@ public:
         return maxProfit;
     }
 };
+
+// kadanes algo
