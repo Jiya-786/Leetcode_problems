@@ -47,9 +47,7 @@ public:
     }
     void reverse(vector<int>& nums,int left,int right){
         while(left<right){
-            int temp=nums[left];
-            nums[left]=nums[right];
-            nums[right]=temp;
+            swap(nums[left],nums[right]);
             left++;
             right--;
         }
