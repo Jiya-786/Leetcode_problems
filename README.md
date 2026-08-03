@@ -6,7 +6,7 @@
 
 | Total Problems | Topics |
 |---|---|
-| 5 | 3 |
+| 6 | 4 |
 
 ---
 
@@ -14,6 +14,7 @@
 
 - [greedy](#greedy) (2)
 - [implementation](#implementation) (3)
+- [math](#math) (1)
 - [sortings](#sortings) (1)
 
 ---
@@ -32,6 +33,12 @@
 | 136A | [Presents](https://codeforces.com/contest/136/problem/A) | 800 | [GNU C11](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/136/A%20-%20Presents/solution.c) |
 | 144A | [Arrival of the General](https://codeforces.com/contest/144/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/144/A%20-%20Arrival%20of%20the%20General/solution.cpp) |
 | 263A | [Beautiful Matrix](https://codeforces.com/contest/263/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/263/A%20-%20Beautiful%20Matrix/solution.cpp) |
+
+### math
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 1296A | [Array with Odd Sum](https://codeforces.com/contest/1296/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/1296/A%20-%20Array%20with%20Odd%20Sum/solution.cpp) |
 
 ### sortings
 
