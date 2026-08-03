@@ -6,15 +6,23 @@
 
 | Total Problems | Topics |
 |---|---|
-| 3 | 1 |
+| 4 | 3 |
 
 ---
 
 ## 📂 Topic-Wise Problems
 
+- [greedy](#greedy) (1)
 - [implementation](#implementation) (3)
+- [sortings](#sortings) (1)
 
 ---
+
+### greedy
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 160A | [Twins](https://codeforces.com/contest/160/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/160/A%20-%20Twins/solution.cpp) |
 
 ### implementation
 
@@ -23,6 +31,12 @@
 | 136A | [Presents](https://codeforces.com/contest/136/problem/A) | 800 | [GNU C11](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/136/A%20-%20Presents/solution.c) |
 | 144A | [Arrival of the General](https://codeforces.com/contest/144/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/144/A%20-%20Arrival%20of%20the%20General/solution.cpp) |
 | 263A | [Beautiful Matrix](https://codeforces.com/contest/263/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/263/A%20-%20Beautiful%20Matrix/solution.cpp) |
+
+### sortings
+
+| # | Problem | Difficulty | Solution |
+|---|---------|------------|----------|
+| 160A | [Twins](https://codeforces.com/contest/160/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/160/A%20-%20Twins/solution.cpp) |
 
 ---
 
