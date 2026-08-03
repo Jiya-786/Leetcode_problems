@@ -6,16 +6,16 @@
 
 | Total Problems | Topics |
 |---|---|
-| 6 | 4 |
+| 7 | 4 |
 
 ---
 
 ## 📂 Topic-Wise Problems
 
-- [greedy](#greedy) (2)
+- [greedy](#greedy) (3)
 - [implementation](#implementation) (3)
 - [math](#math) (1)
-- [sortings](#sortings) (1)
+- [sortings](#sortings) (2)
 
 ---
 
@@ -25,6 +25,7 @@
 |---|---------|------------|----------|
 | 160A | [Twins](https://codeforces.com/contest/160/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/160/A%20-%20Twins/solution.cpp) |
 | 337A | [Puzzles](https://codeforces.com/contest/337/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/337/A%20-%20Puzzles/solution.cpp) |
+| 1353B | [Two Arrays And Swaps](https://codeforces.com/contest/1353/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/1353/B%20-%20Two%20Arrays%20And%20Swaps/solution.cpp) |
 
 ### implementation
 
@@ -45,6 +46,7 @@
 | # | Problem | Difficulty | Solution |
 |---|---------|------------|----------|
 | 160A | [Twins](https://codeforces.com/contest/160/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/160/A%20-%20Twins/solution.cpp) |
+| 1353B | [Two Arrays And Swaps](https://codeforces.com/contest/1353/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/1353/B%20-%20Two%20Arrays%20And%20Swaps/solution.cpp) |
 
 ---
 
