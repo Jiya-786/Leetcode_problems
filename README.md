@@ -6,7 +6,7 @@
 
 | Total Problems | Topics |
 |---|---|
-| 9 | 6 |
+| 10 | 6 |
 
 ---
 
@@ -14,7 +14,7 @@
 
 - [brute force](#brute-force) (1)
 - [dp](#dp) (1)
-- [greedy](#greedy) (5)
+- [greedy](#greedy) (6)
 - [implementation](#implementation) (3)
 - [math](#math) (2)
 - [sortings](#sortings) (2)
@@ -41,6 +41,7 @@
 | 337A | [Puzzles](https://codeforces.com/contest/337/problem/A) | 900 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/337/A%20-%20Puzzles/solution.cpp) |
 | 1353B | [Two Arrays And Swaps](https://codeforces.com/contest/1353/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/1353/B%20-%20Two%20Arrays%20And%20Swaps/solution.cpp) |
 | 1367B | [Even Array](https://codeforces.com/contest/1367/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/1367/B%20-%20Even%20Array/solution.cpp) |
+| 1399B | [Gifts Fixing](https://codeforces.com/contest/1399/problem/B) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/1399/B%20-%20Gifts%20Fixing/solution.cpp) |
 | 1538A | [Stone Game](https://codeforces.com/contest/1538/problem/A) | 800 | [C++20 (GCC 13-64)](https://github.com/Jiya-786/Leetcode_problems/blob/HEAD/1538/A%20-%20Stone%20Game/solution.cpp) |
 
 ### implementation
