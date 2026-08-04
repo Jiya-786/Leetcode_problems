@@ -21,6 +21,7 @@
 | [0242-valid-anagram](https://github.com/Jiya-786/Leetcode_problems/tree/master/0242-valid-anagram) |
 | [0344-reverse-string](https://github.com/Jiya-786/Leetcode_problems/tree/master/0344-reverse-string) |
 | [0680-valid-palindrome-ii](https://github.com/Jiya-786/Leetcode_problems/tree/master/0680-valid-palindrome-ii) |
+| [0796-rotate-string](https://github.com/Jiya-786/Leetcode_problems/tree/master/0796-rotate-string) |
 ## Greedy
 |  |
 | ------- |
@@ -33,4 +34,8 @@
 |  |
 | ------- |
 | [0242-valid-anagram](https://github.com/Jiya-786/Leetcode_problems/tree/master/0242-valid-anagram) |
+## String Matching
+|  |
+| ------- |
+| [0796-rotate-string](https://github.com/Jiya-786/Leetcode_problems/tree/master/0796-rotate-string) |
 <!---LeetCode Topics End-->
