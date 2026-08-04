@@ -10,4 +10,9 @@
 |  |
 | ------- |
 | [0080-remove-duplicates-from-sorted-array-ii](https://github.com/Jiya-786/Leetcode_problems/tree/master/0080-remove-duplicates-from-sorted-array-ii) |
+| [0344-reverse-string](https://github.com/Jiya-786/Leetcode_problems/tree/master/0344-reverse-string) |
+## String
+|  |
+| ------- |
+| [0344-reverse-string](https://github.com/Jiya-786/Leetcode_problems/tree/master/0344-reverse-string) |
 <!---LeetCode Topics End-->
