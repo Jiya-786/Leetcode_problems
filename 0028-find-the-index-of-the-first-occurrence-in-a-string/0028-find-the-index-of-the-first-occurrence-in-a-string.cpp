@@ -1,4 +1,4 @@
-// bute force
+// brute force
 // time complexity o(n*m)
 class Solution {
 public:
@@ -17,3 +17,9 @@ public:
         return -1;
     }
 };
+
+// KMP algo:
+
+
+
+// Rolling hash method:
