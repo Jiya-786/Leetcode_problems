@@ -1,6 +1,7 @@
 // on time 
 // on space soln
 // splitting using istringstream
+// istringstream inherently handles spaces in input
 class Solution {
 public:
     string reverseWords(string s) {
