@@ -24,20 +24,51 @@
 // like in a dictionary
 // the first and last string common prefix after sorting
 // that will be the longest common prefix
+// class Solution {
+// public:
+//     string longestCommonPrefix(vector<string>& strs) {
+//         if (strs.empty()) return "";
+
+//         sort(strs.begin(),strs.end());
+
+//         string first=strs[0];
+//         string last=strs[strs.size()-1];
+
+//         int i=0;
+//         while(i<first.length() && i<last.length() && first[i]==last[i]){
+//             i++;
+//         }
+//         return strs[0].substr(0,i);
+//     }
+// };
+
+// divide and conquer
 class Solution {
 public:
     string longestCommonPrefix(vector<string>& strs) {
         if (strs.empty()) return "";
+        int n=strs.size();
+        return findLCP(strs,0,n-1);
+    }
+private:
+    string findLCP(vector<string>& strs,int left,int right){
+        if(left==right) return strs[left];
 
-        sort(strs.begin(),strs.end());
+        int mid=left+(right-left)/2;
 
-        string first=strs[0];
-        string last=strs[strs.size()-1];
+        string lcpLeft=findLCP(strs,left,mid);
+        string lcpRight=findLCP(strs,mid+1,right);
 
-        int i=0;
-        while(i<first.length() && i<last.length() && first[i]==last[i]){
-            i++;
+        return commonPrefix(lcpLeft,lcpRight);
+    }
+
+    string commonPrefix(string& s1,string& s2){
+        int minLen=min(s1.length(),s2.length());
+        for(int i=0;i<minLen;i++){
+            if(s1[i]!=s2[i]){
+                return s1.substr(0,i);
+            }
         }
-        return strs[0].substr(0,i);
+        return s1.substr(0,minLen);
     }
 };
